@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="VirtualAdventurePark.Default" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="VirtualAdventurePark.Default" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,12 +17,7 @@
         <li><a href="Default.aspx">Home</a></li>
         <li><a href="AddRide.aspx">Add New Ride</a></li>
         <li><a href="OrderHistory.aspx">Order History</a></li>
-        <% if (Session["UserID"] == null) { %>
-            <li><a href="Register.aspx">Register</a></li>
-            <li><a href="Login.aspx">Login</a></li>
-        <% } else { %>
-            <li><a href="Logout.aspx">Logout</a></li>
-        <% } %>
+        
     </ul>
 </nav>
             </header>
