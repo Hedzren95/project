@@ -1,0 +1,227 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+    header h1 {
+        margin: 0;
+    }
+
+nav ul.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+    nav ul.nav-menu li {
+        margin-left: 20px;
+    }
+
+        nav ul.nav-menu li a {
+            text-decoration: none;
+            color: #007bff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+            nav ul.nav-menu li a:hover {
+                background-color: #007bff;
+                color: #fff;
+            }
+
+.hero {
+    background-image: url('../images/hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.hero .btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+}
+
+.filter-section {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.tickets-section, .cart-section {
+    margin: 20px 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.ticket-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+    .ticket-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .ticket-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+.ticket-card-content {
+    padding: 20px;
+}
+
+.ticket-card h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+
+.ticket-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.ticket-card .btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .ticket-card .btn:hover {
+        background-color: #0056b3;
+    }
+
+.order-summary, .success-message {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.order-summary {
+    color: #333;
+}
+
+.success-message {
+    color: green;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+    .footer-nav li {
+        margin-left: 20px;
+    }
+
+        .footer-nav li a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+            .footer-nav li a:hover {
+                color: #007bff;
+            }
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-nav {
+        margin-top: 10px;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+}
