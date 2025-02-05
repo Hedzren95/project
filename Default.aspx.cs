@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI.WebControls;
-using VirtualAdventurePark.Models; // Add this directive
+using VirtualAdventurePark.Models;
 
 namespace VirtualAdventurePark
 {
@@ -12,11 +12,6 @@ namespace VirtualAdventurePark
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserID"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
-
             if (!IsPostBack)
             {
                 BindCategories();
