@@ -76,3 +76,4 @@ C:\Users\TMY-STUDENT\source\repos\New system\AdventureParkSystem\AdventureParkSy
 C:\Users\TMY-STUDENT\source\repos\New system\AdventureParkSystem\AdventureParkSystem\bin\EntityFramework.SqlServer.xml
 C:\Users\TMY-STUDENT\source\repos\New system\AdventureParkSystem\AdventureParkSystem\obj\Debug\AdventureParkSystem.Migrations.AddOrdersAndOrderItems.resources
 C:\Users\TMY-STUDENT\source\repos\New system\AdventureParkSystem\AdventureParkSystem\obj\Debug\AdventureParkSystem.csproj.GenerateResource.cache
+C:\Users\TMY-STUDENT\source\repos\New system\AdventureParkSystem\AdventureParkSystem\obj\Debug\AdventureParkSystem.Migrations.InitialCreate.resources
