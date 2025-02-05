@@ -31,8 +31,8 @@ namespace VirtualAdventurePark
         private void BindTickets(string category = "All")
         {
             var tickets = category == "All" ? db.Tickets.ToList() : db.Tickets.Where(t => t.Category == category).ToList();
-            gvTickets.DataSource = tickets;
-            gvTickets.DataBind();
+            rptTickets.DataSource = tickets;
+            rptTickets.DataBind();
         }
 
         protected void ddlCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,26 +40,23 @@ namespace VirtualAdventurePark
             BindTickets(ddlCategory.SelectedValue);
         }
 
-        protected void gvTickets_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void AddToCart_Click(object sender, EventArgs e)
         {
-            if (e.CommandName == "AddToCart")
+            Button btn = (Button)sender;
+            int ticketID = Convert.ToInt32(btn.CommandArgument);
+            var ticket = db.Tickets.Find(ticketID);
+            List<CartItem> cart = Session["Cart"] as List<CartItem> ?? new List<CartItem>();
+            var cartItem = cart.FirstOrDefault(c => c.Ticket.TicketID == ticketID);
+            if (cartItem != null)
             {
-                int index = Convert.ToInt32(e.CommandArgument);
-                int ticketID = (int)gvTickets.DataKeys[index].Value;
-                var ticket = db.Tickets.Find(ticketID);
-                List<CartItem> cart = Session["Cart"] as List<CartItem> ?? new List<CartItem>();
-                var cartItem = cart.FirstOrDefault(c => c.Ticket.TicketID == ticketID);
-                if (cartItem != null)
-                {
-                    cartItem.Quantity++;
-                }
-                else
-                {
-                    cart.Add(new CartItem { Ticket = ticket, Quantity = 1 });
-                }
-                Session["Cart"] = cart;
-                BindCart();
+                cartItem.Quantity++;
             }
+            else
+            {
+                cart.Add(new CartItem { Ticket = ticket, Quantity = 1 });
+            }
+            Session["Cart"] = cart;
+            BindCart();
         }
 
         private void BindCart()
